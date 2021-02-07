@@ -21,6 +21,7 @@ function CreateProjectModal(props) {
       date: deliverDate,
       cost: projectCost, 
     }
+    props.postProjectData(DataToBeSended);
   }
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">

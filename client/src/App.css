@@ -13,6 +13,14 @@
   }
 }
 
+.error {
+  position: absolute;
+  font-size: smaller;
+  text-align: center;
+  left: 90px;
+  color: red;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

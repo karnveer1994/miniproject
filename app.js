@@ -6,20 +6,18 @@
  * *************************************************************** */
 
 
-var modulename = 'Main';
 
 // Lib
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-var async = require("async");
-var http = require('http');
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors')
+const routes = require("./routes");
 
 // Deps
 // App Setup
-var app = express();
+const app = express();
 app.enable('strict routing');
-
+app.use(cors());
 // Post data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -47,7 +45,6 @@ app.use(require('morgan')(
     })
 );
 
-var routes = require("./routes");
     
 routes.init(app);
 

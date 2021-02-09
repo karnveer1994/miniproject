@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
 import ChooseCardModal from '../../components/ChooseCardModal'
-import { 
-    postProjectData
+import {
+  getProjectData
 } from '../../actions/createProjectActions'
 
 const mapStateToProps = state => (
-  { 
+  {
     chooseCardModalStatus: state.DataProvider.chooseCardModalStatus,
   }
 )
 
-const mapDispatchToProps = { postProjectData }
+const mapDispatchToProps = { getProjectData }
 
 export default connect(
   mapStateToProps,

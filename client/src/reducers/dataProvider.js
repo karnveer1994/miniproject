@@ -1,14 +1,12 @@
 import * as types from '../actions/actionTypes'
 
 const initialState = {
-  resultDataId: '',
-  resultList: [],
-  successResult: '',
+  results: [],
   errorMessage: '',
   timestamp: new Date(),
-  listings: [],
   createProjectModalShow: false,
   chooseCardModalStatus: false,
+  showSectionPage: false
 }
 
 const DataProvider = (state = initialState, action) => {
@@ -34,6 +32,20 @@ const DataProvider = (state = initialState, action) => {
         ...state,
         errorMessage: action.error,
         timestamp: new Date()
+      }
+    case types.GET_PROJECT_DATA_SUCCESS:
+      return {
+        ...state,
+        showSectionPage: true,
+        chooseCardModalStatus: false,
+        results: [action.payload]
+      }
+    case types.GET_PROJECT_DATA_FAILURE:
+      return {
+        ...state,
+        errorMessage: action.error,
+        timestamp: new Date(),
+        results: []
       }
     default:
       return state

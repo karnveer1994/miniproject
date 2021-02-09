@@ -14,6 +14,10 @@ function ChooseCardModal(props) {
     "Visa credit card ending with 7645",
   ];
 
+  const handleSubmit = () => {
+    props.getProjectData();
+  }
+
   return (
     <Modal centered {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
@@ -54,7 +58,7 @@ function ChooseCardModal(props) {
         </Card>
       </Modal.Body>
       <Modal.Footer className='modalFooter'>
-        <Button variant='primary' size='lg' className='payButton'>Pay</Button>
+        <Button onClick={handleSubmit} variant='primary' size='lg' className='payButton'>Pay</Button>
       </Modal.Footer>
     </Modal>
   );

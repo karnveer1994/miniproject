@@ -23,13 +23,13 @@ function CreateProjectModal(props) {
     const projectCostCheck = !(100 <= projectCost || projectCost >= 100000);
 
     if (titleCheck) {
-      setTitleError("max length exceed from 80");
+      setTitleError("maximum characters length exceeded from 80");
     }
     if (descriptionCheck) {
-      setDescriptionError("max length exceed from 100");
+      setDescriptionError("maximum characters length exceeded 100");
     }
     if (projectCostCheck) {
-      setProjectCostError("project cost have to be in range 100-100000");
+      setProjectCostError("project cost must be in range 100-100000");
     }
 
     if (!(titleCheck || descriptionCheck || projectCostCheck)) {

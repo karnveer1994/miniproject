@@ -5,14 +5,8 @@ export const postProjectData = payload => ({
   payload
 })
 
-export const fetchResultDataIdSuccess = payload => ({
-  type: types.POST_PROJECT_DATA_SUCCESS,
-  payload
-})
-
-export const fetchResultDataIdFailure = payload => ({
-  type: types.POST_PROJECT_DATA_FAILURE,
-  payload
+export const getProjectData = () => ({
+  type: types.GET_PROJECT_DATA
 })
 
 export const createProjectModalShow = payload => ({

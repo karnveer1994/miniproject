@@ -17,7 +17,7 @@ function SectionPage(props) {
           >
             <Card.Body style={{padding: 0}}>
               {
-                props.results.map(p => {
+                props.results.map((p, index) => {
                   const cleverXfee = (p.cost*20)/100
                   const total = p.cost + cleverXfee
                   const date = new Date(p.date)
@@ -26,7 +26,7 @@ function SectionPage(props) {
                   const days = Math.ceil(diffTime / (1000 * 3600 * 24)); 
                   
                   return (
-                    <div className='sectionContainer'>
+                    <div className='sectionContainer' key={index}>
                       <Row className='rowPadding bgGray'>
                         <Col className='sectionTitle'>{p.name}</Col>
                         <Col>

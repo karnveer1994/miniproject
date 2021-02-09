@@ -75,3 +75,38 @@ npm install react-bootstrap bootstrap
 npm install axios
 npm install react-redux
 npm install redux-saga
+
+
+### Documentation
+
+### Feature Name Create Project
+
+### First Step :-
+ * yarn (it will install all dependencies)
+ * yarn start (it will start the server)
+ * node version (greater than 10)
+
+### Second Step :- 
+* On opening the page there will be `Create Project` button.
+* And on clicking that button we will be  able to see the `pop-up` for `creating the project`.
+* There we can fill the form by filling details like `title`, `Description`, `Delivery date` 
+  and `Project Cost`.
+* And form details that we will fill there will be the validations on it.
+* Validations will be like :-
+   1. Title         : field will not contain length more than 80
+   2. Description   : description field will not contain length more than 100
+   3. Delivery-Date : delivery date will not be taken of previous dates
+   4. Project-Cost  : cost will be taken between 100-100000
+* On filling project cost we can get `CleverX transaction fees (20%)` and `Total Amount in $USD`
+* And on `create project` button in pop-up it will take to `Chooose card` modal.
+
+### Third Step :-
+* Here we can choose card.
+* And clicking `Pay` it will take to the section page.
+
+### Fourth Step :-
+* Here we will get all the details related the project that we have created.
+
+Note:- 
+* Also for backend handled the `CORS` issue by applying `CORS` plugin
+* Used middleware as `redux-saga`

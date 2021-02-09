@@ -16,7 +16,7 @@ function App(props) {
     <>
       {
         !props.showSectionPage &&
-        <Button variant="primary" onClick={() => props.createProjectModalShow(true)}>
+        <Button className='createProjectButton' variant="primary" onClick={() => props.createProjectModalShow(true)}>
           Create Project
         </Button>
       }

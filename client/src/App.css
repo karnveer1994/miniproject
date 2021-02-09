@@ -107,6 +107,12 @@
   display: block;
 }
 
+.createProjectButton {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
 .visaCard {
   width: 60px !important;
 }

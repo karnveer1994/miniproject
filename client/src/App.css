@@ -36,6 +36,50 @@
   color: #61dafb;
 }
 
+.modalTitle {
+  margin-left: 35%;
+  font-weight: bold !important;
+}
+
+.modalFooter {
+  justify-content: center !important;
+  border-top: none !important;;
+}
+
+.card-body, .fontColorGray {
+  color: gray;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.commonPadding {
+  padding: 2rem !important;
+}
+
+.payButton, .projectButton {
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+
+.checkCircle {
+  width: 20px !important;
+  display: none;
+}
+
+.checkCircle.show {
+  display: block;
+}
+
+.visaCard {
+  width: 60px !important;
+}
+
+.marginAuto {
+  margin: auto;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

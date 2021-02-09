@@ -1,61 +1,60 @@
-import React, { useState} from 'react';
-import visa from '../../assests/VBM_COF.png';
-import greentick from '../../assests/green-check-icon.jpg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Modal from 'react-bootstrap/Modal'
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-
+import React, { useState } from "react";
+import visa from "../../assests/VISA.png";
+import greentick from "../../assests/green-check-icon.png";
+import Modal from "react-bootstrap/Modal";
+import Card from "react-bootstrap/Card";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/esm/Button";
 
 function ChooseCardModal(props) {
-
-    const [selectedCard, setSelectedCardIndex] = useState(0)
-    const cardData = ['Visa credit card ending with 2345', 'Visa credit card ending with 7645']
+  const [selectedCard, setSelectedCard] = useState(0);
+  const creditCards = [
+    "Visa credit card ending with 2345",
+    "Visa credit card ending with 7645",
+  ];
 
   return (
-    <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
+    <Modal centered {...props} aria-labelledby="contained-modal-title-vcenter">
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Choose Card 
+        <Modal.Title className='modalTitle' id="contained-modal-title-vcenter">
+          Choose Card
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="show-grid">
-      {cardData.map((item, index) => (
-        <>
-          <Card border={selectedCard === index && "primary"} onClick={() => setSelectedCardIndex(index)}>
-            <Card.Body>
-                <Row>
-                    <Col sm={2}>
-                    <Card.Img variant="top" src={greentick} />
-                    </Col>
-                    <Col sm={2}>
-                    <Card.Img variant="top" src={visa} />
-                    </Col>
-                    <Col sm={8}>
-                    {item}
-                    </Col>
+        {creditCards.map((item, index) => (
+          <div key={index}>
+            <Card
+              border={selectedCard === index && "primary"}
+              onClick={() => setSelectedCard(index)}
+            >
+              <Card.Body>
+                <Row className='marginAuto'>
+                  <Col className='marginAuto' sm={1}>
+                    <Card.Img className={`checkCircle ${selectedCard === index ? 'show' : ''}`} variant="top" src={greentick} />
+                  </Col>
+                  <Col className='marginAuto' sm={3}>
+                    <Card.Img className='visaCard' variant="top" src={visa} />
+                  </Col>
+                  <Col className='marginAuto' sm={8}>{item}</Col>
                 </Row>
-            </Card.Body>
-        </Card>
-        <br/>
-        </>
-      ))}
-      <Card >
-        <Card.Body>
-          <Row>
-            <Col sm={2}>
-            </Col>
-            <Col sm={4}>
-                + Add card
-            </Col>
-            <Col sm={8}>
-            </Col>
-          </Row>
-        </Card.Body>
+              </Card.Body>
+            </Card>
+            <br />
+          </div>
+        ))}
+        <Card>
+          <Card.Body>
+            <Row>
+              <Col sm={2}></Col>
+              <Col sm={4}>+ Add card</Col>
+              <Col sm={8}></Col>
+            </Row>
+          </Card.Body>
         </Card>
       </Modal.Body>
-      <Modal.Footer>
+      <Modal.Footer className='modalFooter'>
+        <Button variant='primary' size='lg' className='payButton'>Pay</Button>
       </Modal.Footer>
     </Modal>
   );
